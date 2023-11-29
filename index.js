@@ -26,7 +26,6 @@ function makePOS(posName) {
 }
 
 function makeItem(meaning, exampleSentence, exampleSentenceMeaning) {
-    console.log(meaning, exampleSentence, exampleSentenceMeaning);
     const itemDiv = document.createElement("div");
 
     const meaningP = document.createElement("p");
@@ -98,7 +97,6 @@ function download(canvas, filename) {
 }
 
 wordContainer.addEventListener("click", e => {
-    console.log("wow");
     html2canvas(wordContainer, {backgroundColor: "#2c2c2c"}).then((canvas) => {
         const filename = "screenshot";
         const data = canvas.toDataURL("image/png;base64");
