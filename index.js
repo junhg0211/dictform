@@ -1,5 +1,6 @@
 const wordSpan = document.querySelector("#word");
 const pronunciationSpan = document.querySelector("#pronunciation");
+const etymologySpan = document.querySelector("#etymology");
 const definitionsDiv = document.querySelector("#definitions");
 const wordContainer = document.querySelector(".word-container");
 
@@ -84,6 +85,12 @@ wordSpan.innerHTML = word;
 const pronunciation = url.searchParams.get("pronunciation");
 if (pronunciation !== null) {
     pronunciationSpan.innerHTML = pronunciation;
+}
+
+// -- etymology
+const etymology = url.searchParams.get("etymology");
+if (etymology !== null) {
+    etymologySpan.innerHTML = etymology;
 }
 
 // -- make definitions
