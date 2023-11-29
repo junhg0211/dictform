@@ -1,6 +1,7 @@
 const wordSpan = document.querySelector("#word");
 const pronunciationSpan = document.querySelector("#pronunciation");
 const definitionsDiv = document.querySelector("#definitions");
+const wordContainer = document.querySelector(".word-container");
 
 function makePOS(posName) {
     // -a- if already exists, skip
@@ -90,4 +91,20 @@ if (pronunciation !== null) {
 const definitions = url.searchParams.get("definition")?.split("\n");
 definitions.forEach(definition => {
     makeDefinition(definition);
+});
+
+// -- add click to screenshot event handler
+function download(canvas, filename) {
+}
+
+wordContainer.addEventListener("click", e => {
+    console.log("wow");
+    html2canvas(wordContainer, {backgroundColor: "#2c2c2c"}).then((canvas) => {
+        const filename = "screenshot";
+        const data = canvas.toDataURL("image/png;base64");
+        const downloadLink = document.createElement("a");
+        downloadLink.download = filename;
+        downloadLink.href = data;
+        downloadLink.click();
+    });
 });

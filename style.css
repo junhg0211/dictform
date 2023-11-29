@@ -25,6 +25,7 @@ input[type=submit] { width: 100%; color: #f7f7f9; }
 .outer-container { display: flex; min-height: 100vh; flex-direction: column; }
 .horizontal-container { display: flex; }
 .horizontal-whitespace, .vertical-whitespace { flex-grow: 1; }
+.word-container { padding: 16px; padding-bottom: 0; }
 
 .word { color: #ffcf00; display: inline; }
 .pronunciation { color: grey; }
