@@ -96,7 +96,7 @@ definitions.forEach(definition => {
 function download(canvas, filename) {
 }
 
-wordContainer.addEventListener("click", e => {
+wordContainer.addEventListener("dblclick", e => {
     html2canvas(wordContainer, {backgroundColor: "#2c2c2c"}).then((canvas) => {
         const filename = "screenshot";
         const data = canvas.toDataURL("image/png;base64");
