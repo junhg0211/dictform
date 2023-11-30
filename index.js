@@ -107,7 +107,7 @@ function download(canvas, filename) {
 
 wordContainer.addEventListener("dblclick", e => {
     html2canvas(wordContainer, {backgroundColor: "#2c2c2c"}).then((canvas) => {
-        const filename = "screenshot";
+        const filename = `dictform-${word}`;
         const data = canvas.toDataURL("image/png;base64");
         const downloadLink = document.createElement("a");
         downloadLink.download = filename;
