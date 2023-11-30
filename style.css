@@ -20,6 +20,8 @@ input { width: calc(100% - 20px); }
 input:focus, textarea:focus { outline: none; }
 input[type=submit] { width: 100%; color: #f7f7f9; }
 
+.small-logo { width: 2rem; margin: auto; display: block; }
+
 .input-label { margin-bottom: 0.8rem; font-size: 0.8rem; }
 
 .outer-container { display: flex; min-height: 100vh; flex-direction: column; }
