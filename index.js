@@ -93,6 +93,8 @@ if (etymology !== null) {
     etymologySpan.innerHTML = etymology;
 }
 
+document.title = `${word}${pronunciation === null ? "" : " " + pronunciation}${etymology === null ? "" : " " + etymology} - Dictform`;
+
 // -- make definitions
 const definitions = url.searchParams.get("definition")?.split("\n");
 definitions.forEach(definition => {
