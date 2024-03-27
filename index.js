@@ -102,10 +102,10 @@ definitions.forEach((definition) => {
 });
 
 // -- add click to screenshot event handler
-function download(canvas, filename) {}
-
-wordContainer.addEventListener("dblclick", (e) => {
-  html2canvas(wordContainer, { backgroundColor: "#2c2c2c" }).then((canvas) => {
+function download() {
+  html2canvas(wordContainer, {
+    backgroundColor: backgroundColor === null ? "#2c2c2c" : backgroundColor,
+  }).then((canvas) => {
     const filename = `dictform-${word}`;
     const data = canvas.toDataURL("image/png;base64");
     const downloadLink = document.createElement("a");
@@ -113,4 +113,40 @@ wordContainer.addEventListener("dblclick", (e) => {
     downloadLink.href = data;
     downloadLink.click();
   });
+}
+
+wordContainer.addEventListener("dblclick", (e) => {
+  download();
 });
+
+// -- colors
+const backgroundColor = url.searchParams.get("backgroundcolor");
+const color = url.searchParams.get("color");
+const wordColor = url.searchParams.get("wordcolor");
+const pronunciationColor = url.searchParams.get("pronunciationcolor");
+const posNameColor = url.searchParams.get("posnamecolor");
+const exampleBarColor = url.searchParams.get("examplebarcolor");
+const exampleColor = url.searchParams.get("examplecolor");
+
+const body = document.querySelector("body");
+if (backgroundColor !== null) {
+  body.style.setProperty("--background-color", backgroundColor);
+}
+if (color !== null) {
+  body.style.setProperty("--color", color);
+}
+if (wordColor !== null) {
+  body.style.setProperty("--word-color", wordColor);
+}
+if (pronunciationColor !== null) {
+  body.style.setProperty("--pronunciation-color", pronunciationColor);
+}
+if (posNameColor !== null) {
+  body.style.setProperty("--pos-name-color", posNameColor);
+}
+if (exampleBarColor !== null) {
+  body.style.setProperty("--example-bar-color", exampleBarColor);
+}
+if (exampleColor !== null) {
+  body.style.setProperty("--example-color", exampleColor);
+}
