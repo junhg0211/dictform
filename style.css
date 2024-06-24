@@ -41,6 +41,10 @@ input[type="submit"] {
   width: 100%;
   color: #f7f7f9;
 }
+input[type="color"] {
+  padding: 4px;
+  height: 30px;
+}
 
 .small-logo {
   width: 2rem;
@@ -51,6 +55,13 @@ input[type="submit"] {
 .input-label {
   margin-bottom: 0.8rem;
   font-size: 0.8rem;
+}
+
+.colors {
+  display: flex;
+}
+.color-selection {
+  flex: 1;
 }
 
 .outer-container {
