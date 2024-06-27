@@ -102,17 +102,48 @@ definitions.forEach((definition) => {
 });
 
 // -- add click to screenshot event handler
-function download() {
+function downloadAsImage() {
   html2canvas(wordContainer, {
     backgroundColor: backgroundColor === null ? "#2c2c2c" : backgroundColor,
   }).then((canvas) => {
-    const filename = `dictform-${word}`;
     const data = canvas.toDataURL("image/png;base64");
+    const filename = `dictform-${word}`;
     const downloadLink = document.createElement("a");
     downloadLink.download = filename;
     downloadLink.href = data;
     downloadLink.click();
   });
+}
+
+function copyImage() {
+  html2canvas(wordContainer, {
+    backgroundColor: backgroundColor === null ? "#2c2c2c" : backgroundColor,
+  }).then((canvas) => {
+    canvas.toBlob((data) => {
+      try {
+        navigator.clipboard.write([new ClipboardItem({ "image/png": data })]);
+        alert("이미지가 클립보드에 복사되었습니다.");
+      } catch (error) {
+        downloadAsImage();
+      }
+    });
+  });
+}
+
+function download() {
+  const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+  if (isSafari) {
+    copyImage();
+    return;
+  }
+
+  navigator.permissions &&
+    navigator.permissions
+      .query({ name: "clipboard-write" })
+      .then(() => {
+        copyImage();
+      })
+      .catch(() => downloadAsImage());
 }
 
 wordContainer.addEventListener("dblclick", (e) => {
