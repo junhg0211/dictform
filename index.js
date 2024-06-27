@@ -120,20 +120,24 @@ function copyImage() {
     backgroundColor: backgroundColor === null ? "#2c2c2c" : backgroundColor,
   }).then((canvas) => {
     canvas.toBlob((data) => {
-      try {
-        navigator.clipboard.write([new ClipboardItem({ "image/png": data })]);
-        alert("이미지가 클립보드에 복사되었습니다.");
-      } catch (error) {
-        downloadAsImage();
-      }
+      navigator.clipboard
+        .write([new ClipboardItem({ "image/png": data })])
+        .then(() => alert("이미지가 클립보드에 복사되었습니다."))
+        .catch(() => downloadAsImage());
     });
   });
 }
 
 function download() {
-  const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+  const isSafari =
+    navigator.vendor &&
+    navigator.vendor.indexOf("Apple") > -1 &&
+    navigator.userAgent &&
+    navigator.userAgent.indexOf("CriOS") == -1 &&
+    navigator.userAgent.indexOf("FxiOS") == -1;
   if (isSafari) {
     copyImage();
+    console.log("Hello");
     return;
   }
 
