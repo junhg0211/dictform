@@ -78,7 +78,6 @@ input[type="color"] {
 }
 .word-container {
   padding: 16px;
-  padding-bottom: 0;
 }
 
 .word {
@@ -103,4 +102,13 @@ input[type="color"] {
 }
 .item-example-meaning {
   margin-top: 4px;
+}
+
+.footer {
+  text-align: center;
+  font-size: 8px;
+}
+.footer a {
+  color: gray;
+  text-decoration: none;
 }
