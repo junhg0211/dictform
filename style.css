@@ -78,6 +78,7 @@ input[type="color"] {
 }
 .word-container {
   padding: 16px;
+  max-width: 540px;
 }
 
 .word {
