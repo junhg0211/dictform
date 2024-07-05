@@ -39,7 +39,7 @@ body {
 
 textarea {
   font-family: var(--font-family);
-  width: calc(320px - 20px);
+  width: calc(100% - 20px);
 }
 input,
 textarea {
@@ -53,7 +53,7 @@ textarea {
   font-family: var(--font-family);
 }
 input {
-  width: calc(100% - 20px);
+  width: calc(540px - 20px);
 }
 input:focus,
 textarea:focus {
@@ -100,7 +100,7 @@ input[type="color"] {
 }
 .word-container {
   padding: 16px;
-  max-width: 320px;
+  max-width: 540px;
 }
 
 .word {
