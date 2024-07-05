@@ -25,7 +25,7 @@ body {
 
 textarea {
   font-family: var(--font-family);
-  width: 540px;
+  width: calc(320px - 20px);
 }
 input,
 textarea {
@@ -86,7 +86,7 @@ input[type="color"] {
 }
 .word-container {
   padding: 16px;
-  max-width: 540px;
+  max-width: 320px;
 }
 
 .word {
