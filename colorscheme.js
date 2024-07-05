@@ -3,6 +3,7 @@ const colorSchemes = [
   ["#ffffff", "#000000", "#1b47b9", "#222222", "#7a96b9", "#aaaaaa", "#666666"],
   ["#1a1929", "#ffffff", "#e8501e", "#999999", "#db9090", "#aaaaaa", "#a3a3a3"],
   ["#ffffff", "#000000", "#fea601", "#000000", "#ffc868", "#aaaaaa", "#666666"],
+  ["#ffffff", "#000000", "#3b7540", "#000000", "#5ba365", "#aaaaaa", "#666666"],
 ];
 
 let backgroundColorInput;
