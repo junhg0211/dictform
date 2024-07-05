@@ -1,5 +1,12 @@
+@font-face {
+  font-family: "Sapota";
+  src: url("./Sapota.woff");
+  font-weight: 300;
+  font-style: sans-serif;
+}
+
 body {
-  --font-family: "Pretendard", sans-serif;
+  --font-family: "Sapota", "Pretendard", sans-serif;
 
   --background-color: #2c2c2c;
   --color: #f7f7f9;
@@ -29,6 +36,7 @@ textarea {
   display: block;
   margin-bottom: 10px;
   color: #f7f7f9;
+  font-family: var(--font-family);
 }
 input {
   width: calc(100% - 20px);
